@@ -1,81 +1,78 @@
 # Prototype Toolbox for Angle Cable Nutrunner Tensor STR
 
 ## Overview
-The Prototype Toolbox for Angle Cable Nutrunner Tensor STR is an innovative solution designed to enhance the quality control process in manual screw-tightening operations. This project involves developing a HAT (Hardware Attached on Top) attachment for the Raspberry Pi Compute Module 4 (CM4) and integrating a camera interface for live video feed capture. The captured video stream serves as an input for machine learning (ML) algorithms aimed at detecting errors during manual assembly.
+The Prototype Toolbox for Angle Cable Nutrunner Tensor STR is a hardware integration project designed to enhance manual screw-tightening operations in industrial settings. This project involved developing a custom HAT (Hardware Attached on Top) attachment for the Raspberry Pi Compute Module 4 (CM4) that interfaces with a nutrunner and captures live video feeds for real-time monitoring.
+
+The live video feed is utilized as input for the company's machine learning (ML) software, enabling accurate error detection during manual operations on the assembly line.
 
 ## Features
-- **CAD-Designed HAT Attachment**: Custom-designed HAT attachment to house the Raspberry Pi CM4 and Raspberry Pi Camera Module (RPI CAM).
-- **Real-Time Video Streaming**: Programmed the microcontroller for seamless integration with the nut runner, enabling live video feed capture.
-- **Machine Learning Integration**: Video feed is utilized by ML software for accurate error detection in manual screw-tightening operations.
-- **Compact Design**: Developed a small footprint case to fit the given hardware for use in industrial assembly lines.
+- **Custom HAT Design**: Designed a CAD-modelled HAT attachment that seamlessly integrates the Raspberry Pi CM4 with the nutrunner and CAM interface.
+- **Real-Time Video Streaming**: Programmed the microcontroller to facilitate live video feed capture for monitoring and analysis.
+- **Compact Form Factor**: Developed a small footprint enclosure to house the Raspberry Pi CM4, camera module, and custom circuitry for industrial applications.
+- **Integration with ML Pipeline**: Provided video feed as input for the company’s existing ML pipeline, contributing to improved error detection in manual operations.
 
 ## Workflow
-1. **CAD Design**:
-    - Designed a compact HAT attachment using CAD software to accommodate the Raspberry Pi CM4 and RPI CAM.
-    - Ensured the design met the dimensions and requirements of the industrial tool used on the assembly line.
+1. **HAT Attachment Design**:
+    - Created a custom HAT attachment using CAD software to fit the Raspberry Pi CM4 and connect with the nutrunner.
+    - Ensured proper alignment and connectivity for seamless operation.
 
-2. **Hardware Integration**:
-    - Integrated the Raspberry Pi CM4 and RPI CAM with the nut runner, allowing for real-time video capture.
-    - Developed a custom HAT to facilitate communication between the camera, microcontroller, and the nut runner.
+2. **Microcontroller Programming**:
+    - Programmed the Raspberry Pi CM4 to handle video capture from the camera module.
+    - Developed the necessary scripts for real-time video streaming to monitor screw-tightening processes.
 
-3. **Microcontroller Programming**:
-    - Programmed the Raspberry Pi CM4 to handle video streaming and data processing tasks.
-    - Ensured seamless interfacing between the components, allowing for reliable performance during operations.
+3. **Enclosure Development**:
+    - Designed a compact enclosure that accommodates the Raspberry Pi CM4 and CAM interface, ensuring durability and easy mounting on the assembly line.
 
-4. **Machine Learning Pipeline**:
-    - Utilized the captured video feed as input for ML algorithms designed to detect errors in screw-tightening operations.
-    - Implemented software to analyze the video stream in real-time, providing immediate feedback on the assembly process.
+4. **Integration with ML Software**:
+    - Provided the live video feed as input to the company's ML software, enhancing the system’s capability to detect errors during manual operations.
 
 ## Hardware & Tools
-- **Raspberry Pi CM4**: The main processing unit for handling video streams and interfacing with the nut runner.
-- **Raspberry Pi Camera Module (RPI CAM)**: Used for capturing live video feeds.
-- **Custom HAT**: Designed to integrate the camera and microcontroller efficiently.
-- **CAD Software**: For designing the HAT and casing.
-- **Python**: For programming the Raspberry Pi and implementing the video processing pipeline.
+- **Raspberry Pi CM4**: The main video capture and control processing unit.
+- **Raspberry Pi Camera Module (RPI CAM)**: Captures live video feeds for monitoring.
+- **Custom HAT**: Enables seamless interfacing with the nutrunner and integrates necessary components.
+- **CAD Software**: Used for designing the HAT attachment and enclosure.
+- **Programming Language**: Python scripts for camera control and video streaming.
 
 ## Installation and Setup
 1. **Clone the Repository**:
     ```bash
-    git clone https://github.com/TheMechanicHulk/Angle-Cable-Nutrunner-Prototype-Toolbox.git
-    cd Angle-Cable-Nutrunner-Prototype-Toolbox
+    git clone https://github.com/TheMechanicHulk/Nutrunner-Prototype-Toolbox.git
+    cd Nutrunner-Prototype-Toolbox
     ```
 
-2. **Hardware Assembly**:
-    - Assemble the components according to the CAD design specifications.
-    - Ensure proper connections between the Raspberry Pi CM4, RPI CAM, and the nut runner.
+2. **Hardware Setup**:
+    - Assemble the components according to the design specifications.
+    - Mount the Raspberry Pi CM4 and CAM module onto the custom HAT.
 
-3. **Software Installation**:
-    - Install necessary libraries on the Raspberry Pi:
+3. **Software Configuration**:
+    - Install required libraries on the Raspberry Pi:
     ```bash
-    sudo apt-get update
-    sudo apt-get install python3-opencv
-    pip install numpy
+    sudo apt update
+    sudo apt install python3-opencv
     ```
 
-4. **Run the System**:
+4. **Run the Video Capture**:
     - Start the video streaming process:
     ```bash
-    python video_stream.py
+    python3 video_capture.py
     ```
-    - The system will capture video feed and process it for ML error detection.
 
-## Model Performance
-- **Error Detection Accuracy**: The ML algorithms were trained using labeled video data, achieving a detection accuracy of over 90% in identifying errors during screw-tightening operations.
-- **Real-Time Analysis**: The system provides real-time feedback, enhancing the quality control process in assembly lines.
+## Design Files
+- **CAD Models**: The CAD files for the HAT attachment and enclosure can be found in the `cad/` folder.
+- **Schematic Diagrams**: Include circuit schematics showing the connections between the Raspberry Pi CM4, CAM, and nutrunner.
 
 ## Results
-- The prototype successfully integrates the Raspberry Pi CM4 and RPI CAM to capture live video feeds.
-- The ML software effectively analyzes the video stream for error detection, improving operational efficiency and reducing defects in manual assembly.
+- The developed prototype successfully captured live video feeds, providing real-time monitoring capabilities for the assembly line.
+- Integration with the company's ML pipeline enabled enhanced error detection, improving operational efficiency.
 
 ## Future Improvements
-- **Enhanced ML Algorithms**: Explore advanced ML techniques to improve error detection accuracy and speed.
-- **Mobile App Integration**: Develop a mobile interface for remote monitoring and control of the assembly process.
-- **User Interface Development**: Create a graphical user interface (GUI) for easier interaction and visualization of the system's performance.
+- **Enhanced Video Processing**: Future work could include implementing real-time video processing algorithms for immediate error detection.
+- **Wireless Communication**: Explore adding wireless capabilities for remote monitoring and data transmission.
+- **Advanced ML Integration**: Collaborate with the ML team to refine input formats and enhance the predictive capabilities of the existing models.
 
 ## File Structure
 ```bash
-├── data/              # Contains sample video data for training and testing ML models
-├── models/            # Saved machine learning models
-├── scripts/           # Python scripts for video streaming and ML integration
-├── hardware/          # Instructions for hardware setup and CAD designs
+├── cad/               # Contains CAD models and design files for the HAT and enclosure
+├── scripts/           # Python scripts for video capture and processing
+├── hardware/          # Instructions for hardware setup and assembly
 └── README.md          # Project documentation
